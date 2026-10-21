@@ -14,7 +14,7 @@ jobs:
       mysql:
         image: mysql:8.0
         env:
-          MYSQL_ROOT_PASSWORD: root
+          MYSQL_ROOT_PASSWORD: 123456
           MYSQL_DATABASE: product_catalog
         ports:
           - 3306:3306
@@ -40,7 +40,7 @@ jobs:
         env:
           DB_URL: jdbc:mysql://127.0.0.1:3306/product_catalog
           DB_USERNAME: root
-          DB_PASSWORD: root
+          DB_PASSWORD: 123456
 
       - name: Check JAR file exists
         run: ls -lh target/*.jar
