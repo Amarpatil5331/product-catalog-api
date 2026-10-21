@@ -1,0 +1,18 @@
+name: Product Catalog CI
+
+on:
+  push:
+    branches:
+      - 'feature/**'
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Print project information
+        run: echo "Building Product Catalog API"
