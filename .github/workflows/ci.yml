@@ -29,7 +29,7 @@ jobs:
         env:
           DB_URL: jdbc:mysql://127.0.0.1:3306/product_catalog
           DB_USERNAME: root
-          DB_PASSWORD: root
+          DB_PASSWORD: 123456
 
       # 4. Check that the JAR file was created
       - name: Check JAR file exists
