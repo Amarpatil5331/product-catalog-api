@@ -42,5 +42,8 @@ jobs:
           DB_USERNAME: root
           DB_PASSWORD: 123456
 
-      - name: Check JAR file exists
-        run: ls -lh target/*.jar
+      - name: Build Docker image
+        run: docker build -t product-catalog-api:ci .
+
+      - name: Verify Docker image
+        run: docker image ls product-catalog-api
