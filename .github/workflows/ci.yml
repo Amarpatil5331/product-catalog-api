@@ -3,7 +3,6 @@ name: Product Catalog CI
 on:
   push:
     branches:
-      - 'feature/**'
       - dev
 
 jobs:
@@ -47,6 +46,10 @@ jobs:
 
       - name: Verify AWS identity
         run: aws sts get-caller-identity
+
+      - name: Log in to Amazon ECR console
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
 
       - name: Build with Maven
         run: mvn clean package
