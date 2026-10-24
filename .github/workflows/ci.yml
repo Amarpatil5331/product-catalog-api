@@ -43,7 +43,11 @@ jobs:
           DB_PASSWORD: 123456
 
       - name: Build Docker image
-        run: docker build -t product-catalog-api:ci .
+        run: |
+          docker build \
+            -t product-catalog-api:ci \
+            -t product-catalog-api:${GITHUB_SHA::7} \
+            .
 
       - name: Verify Docker image
         run: docker image ls product-catalog-api
