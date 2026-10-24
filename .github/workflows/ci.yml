@@ -62,5 +62,5 @@ jobs:
             -t product-catalog-api:${GITHUB_SHA::7} \
             .
 
-      - name: Verify Docker image
+      - name: Verify Docker image test
         run: docker image ls product-catalog-api
